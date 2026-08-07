@@ -1,29 +1,73 @@
-install UV 
-$ brew install uv
+# Learning RAG
 
-sync uv to createing virtual environment 
-$ uv sync
+A hands-on crash course for learning how to work with LLMs and Retrieval-Augmented Generation (RAG) in Python.
 
+## Setup
 
-to activate virtual envirnment [creating jupyter notebook]
-windows: 
-$ .venv\Scripts\activate
-linux or Mac
-$ source .venv/bin/activate
+### 1. Install UV
 
-to open the notebook
-$ python -m notebook
+```bash
+brew install uv
+```
 
+### 2. Sync dependencies and create a virtual environment
 
-open the 1_simple_llm_calling and create new python jupyter notebook
+```bash
+uv sync
+```
 
-add your API key in .env file created on top layer of the folder
+### 3. Activate the virtual environment
 
-to create LLM update the line 
-llm= ChatGoogleGenerativeAI(model= <"type in your ai model name">)
+**Windows:**
+```bash
+.venv\Scripts\activate
+```
 
-to call LLM 
-response = llm.invoke("how many moon does Jupiter have?")
+**Linux / Mac:**
+```bash
+source .venv/bin/activate
+```
+
+### 4. Open Jupyter Notebook
+
+```bash
+python -m notebook
+```
+
+### 5. Add your API key
+
+Create a `.env` file in the top-level folder of the project and add your API key there. This file is git-ignored, so your key will never be committed.
+
+## Usage
+
+### Simple LLM calling
+
+Open `1_simple_llm_calling` and create a new Python Jupyter notebook.
+
+To create an LLM instance, update the model line:
+
+```python
+llm = ChatGoogleGenerativeAI(model="<type in your AI model name>")
+```
+
+To call the LLM:
+
+```python
+response = llm.invoke("How many moons does Jupiter have?")
 print(response.text)
+```
 
-Same thing for 1_simple_llm_calling & 2_health_analysis
+The same setup applies to both `1_simple_llm_calling` and `2_health_analysis`.
+
+## Project Structure
+
+```
+Learning-RAG/
+├── 1_simple_llm_calling/     # Basic LLM invocation examples
+├── 2_health_analysis/        # Health/blood work analysis with LLMs
+│   └── streamlit_app/        # Streamlit interface
+├── src/ai_crash_course/      # Core package code
+├── .env                      # Your API keys (not tracked)
+├── pyproject.toml            # Project dependencies
+└── README.md
+```
