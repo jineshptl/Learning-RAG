@@ -66,8 +66,22 @@ Learning-RAG/
 ├── 1_simple_llm_calling/     # Basic LLM invocation examples
 ├── 2_health_analysis/        # Health/blood work analysis with LLMs
 │   └── streamlit_app/        # Streamlit interface
-├── src/ai_crash_course/      # Core package code
 ├── .env                      # Your API keys (not tracked)
 ├── pyproject.toml            # Project dependencies
 └── README.md
+```
+
+After Adding new folder for 3_vector_db
+updated pyproject.toml with chromadb dependency
+
+in terminal run the command below to download all the neccasy package 
+
+```bash
+$ uv sync
+```
+
+Command below to launch the jupyter notebook
+
+```bash
+$ python -m notebook
 ```
