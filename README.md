@@ -38,6 +38,12 @@ python -m notebook
 
 Create a `.env` file in the top-level folder of the project and add your API key there. This file is git-ignored, so your key will never be committed.
 
+```python
+GOOGLE_API_KEY = <API_KEY>
+
+GROQ_API_KEY = <API_KEY>
+```
+
 ## Usage
 
 ### 1. Simple LLM calling
