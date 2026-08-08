@@ -40,7 +40,7 @@ Create a `.env` file in the top-level folder of the project and add your API key
 
 ## Usage
 
-### Simple LLM calling
+### 1. Simple LLM calling
 
 Open `1_simple_llm_calling` and create a new Python Jupyter notebook.
 
@@ -59,6 +59,33 @@ print(response.text)
 
 The same setup applies to both `1_simple_llm_calling` and `2_health_analysis`.
 
+### 3. Vector DB basics
+
+Added a new `3_vector_db` folder to explore vector databases with ChromaDB.
+
+`pyproject.toml` was updated with the `chromadb` dependency. To pull in the new package, run:
+
+```bash
+uv sync
+```
+
+Then launch Jupyter Notebook as usual:
+
+```bash
+python -m notebook
+```
+
+### 4. RAG basics
+
+Added a new `4_rag_basics` folder that puts it all together — loading a PDF, chunking it, embedding it into a vector store, and building a retrieval-augmented generation chain.
+
+Same steps as above — sync dependencies, then launch Jupyter:
+
+```bash
+uv sync
+python -m notebook
+```
+
 ## Project Structure
 
 ```
@@ -66,34 +93,9 @@ Learning-RAG/
 ├── 1_simple_llm_calling/     # Basic LLM invocation examples
 ├── 2_health_analysis/        # Health/blood work analysis with LLMs
 │   └── streamlit_app/        # Streamlit interface
+├── 3_vector_db/               # Vector database basics with ChromaDB
+├── 4_rag_basics/               # End-to-end RAG pipeline
 ├── .env                      # Your API keys (not tracked)
 ├── pyproject.toml            # Project dependencies
 └── README.md
-```
-
-After Adding new folder for 3_vector_db 
-updated pyproject.toml with chromadb dependency
-
-in terminal run the command below to download all the neccasy package 
-
-```bash
-$ uv sync
-```
-
-Command below to launch the jupyter notebook
-
-```bash
-$ python -m notebook
-```
-
-Same way added 4_rag_basics
-
-```bash
-$ uv sync
-```
-
-Command below to launch the jupyter notebook
-
-```bash
-$ python -m notebook
 ```
