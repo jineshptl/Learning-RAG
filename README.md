@@ -71,10 +71,22 @@ Learning-RAG/
 └── README.md
 ```
 
-After Adding new folder for 3_vector_db
+After Adding new folder for 3_vector_db 
 updated pyproject.toml with chromadb dependency
 
 in terminal run the command below to download all the neccasy package 
+
+```bash
+$ uv sync
+```
+
+Command below to launch the jupyter notebook
+
+```bash
+$ python -m notebook
+```
+
+Same way added 4_rag_basics
 
 ```bash
 $ uv sync
