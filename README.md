@@ -38,10 +38,9 @@ python -m notebook
 
 Create a `.env` file in the top-level folder of the project and add your API key there. This file is git-ignored, so your key will never be committed.
 
-```python
-GOOGLE_API_KEY = <API_KEY>
-
-GROQ_API_KEY = <API_KEY>
+```env
+GOOGLE_API_KEY=<API_KEY>
+GROQ_API_KEY=<API_KEY>
 ```
 
 ## Usage
@@ -86,6 +85,29 @@ python -m notebook
 Added a new `4_rag_basics` folder that puts it all together — loading a PDF, chunking it, embedding it into a vector store, and building a retrieval-augmented generation chain.
 
 Same steps as above — sync dependencies, then launch Jupyter:
+
+```bash
+uv sync
+python -m notebook
+```
+
+### 5. Simple Agent
+
+Created a dictionary with product data for the agent to call and generate responses from.
+
+1. Extract the exact product name from the question (LLM invoked at this point).
+2. Call `get_product("Wireless Headphone")`.
+3. Analyse the result, e.g. `{"price": 79.99, "description": "over the ear, wireless, 30 hours audio time"}`.
+4. Return a human-readable response (LLM invoked again at this point).
+
+```bash
+uv sync
+python -m notebook
+```
+
+### 6. Memory
+
+Same notebook from step 5 (`product_query_agent.ipynb`), with conversation memory added on top so the agent can recall earlier turns in the session.
 
 ```bash
 uv sync
