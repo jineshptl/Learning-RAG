@@ -118,12 +118,14 @@ python -m notebook
 
 ```
 Learning-RAG/
-├── 1_simple_llm_calling/     # Basic LLM invocation examples
-├── 2_health_analysis/        # Health/blood work analysis with LLMs
-│   └── streamlit_app/        # Streamlit interface
-├── 3_vector_db/               # Vector database basics with ChromaDB
-├── 4_rag_basics/               # End-to-end RAG pipeline
-├── .env                      # Your API keys (not tracked)
-├── pyproject.toml            # Project dependencies
+├── 1_simple_llm_calling/      # Basic LLM invocation examples
+├── 2_health_analysis/         # Health/blood work analysis with LLMs
+│   └── streamlit_app/         # Streamlit interface
+├── 3_vector_db/                # Vector database basics with ChromaDB
+├── 4_rag_basics/                # End-to-end RAG pipeline
+├── 5_simple_agent/               # Tool-calling agent with product lookup
+├── 6_memory/                      # Agent with conversation memory (checkpointer)
+├── .env                       # Your API keys (not tracked)
+├── pyproject.toml             # Project dependencies
 └── README.md
 ```
