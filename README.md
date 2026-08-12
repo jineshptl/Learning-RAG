@@ -114,6 +114,19 @@ uv sync
 python -m notebook
 ```
 
+### 7. MultiModel with memory
+
+Added a new `7_multiModel` folder using `blood_work.png` as input.
+
+1. The image is read, base64-encoded, and passed to a multimodal LLM call along with a text prompt.
+2. The model extracts each test result from the image and reports whether it's within the normal range.
+3. That extracted report is then passed into a diet-recommendation tool, which categorizes it into one of three conditions — `Normal`, `high_sugar`, or `high_cholesterol` — and returns a tailored diet plan based on the category.
+
+```bash
+uv sync
+python -m notebook
+```
+
 ## Project Structure
 
 ```
@@ -125,6 +138,7 @@ Learning-RAG/
 ├── 4_rag_basics/                # End-to-end RAG pipeline
 ├── 5_simple_agent/               # Tool-calling agent with product lookup
 ├── 6_memory/                      # Agent with conversation memory (checkpointer)
+├── 7_multiModel/                   # Multimodal blood work analysis + diet recommendation
 ├── .env                       # Your API keys (not tracked)
 ├── pyproject.toml             # Project dependencies
 └── README.md
